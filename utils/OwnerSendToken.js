@@ -4,6 +4,8 @@ exports.Ownersendtoken = (owner, statusCode, res) => {
         expires: new Date(
             Date.now() + process.env.COOKIE_EXPIRE *24*60*60*1000 
         ),
+        httpOnly: true,
+
     }
 
     res.status(statusCode).cookie("Ownertoken", Ownertoken, options).json({success:true, id: owner._id, Ownertoken})  
