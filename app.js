@@ -31,7 +31,22 @@ app.use(fileupload());
 
 
 const cors = require("cors");
-app.use(cors({ credentials: true, origin: true }));
+app.use(cors({
+  origin: [
+    "https://canyon-backend.onrender.com",
+    "http://localhost:5173",
+    process.env.CLIENT_URL,
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true,
+  Headers: true,
+  exposedHeaders: 'Set-Cookie',
+  allowedHeaders: [
+    'Access-Control-Allow-Origin',
+    'Content-Type',
+    'Authorization'
+  ]
+}));
 
 // Routes
 app.use("/", require("./routes/indexRoutes"));
