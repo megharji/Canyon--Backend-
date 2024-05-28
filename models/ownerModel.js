@@ -57,6 +57,6 @@ ownerModel.methods.getjwttoken = function () {
     }) 
 }
 
-const Seekers = mongoose.model("owner", ownerModel)
+const Owner = mongoose.model("owner", ownerModel)
 
-module.exports = Seekers;
+module.exports = Owner;
