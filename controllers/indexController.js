@@ -30,6 +30,7 @@ exports.seekersregister = catchAsyncErrors( async (req, res, next) => {
             return res.status(400).json({ error: 'Email, Fullname and password are required.' });
         }
         const emailExists = await Owner.exists({ email: req.body.email });
+        console.log("emailExists=",emailExists);
         
         if (emailExists) {
             return res.status(400).json({ error: 'Email is already registered as a Owner.' });
@@ -39,7 +40,9 @@ exports.seekersregister = catchAsyncErrors( async (req, res, next) => {
         if (existingSeeker) {
             return next(new ErrorHandler("Email is already registered", 400));
         }
-        const seekers = await new Seekers(req.body).save()  
+        const seekers = await new Seekers(req.body).save() 
+        console.log("seekers=",seekers);
+         
         sendtoken(seekers, 201 , res)
     }catch(err){
         return res.status(400).json({ error: err.message });

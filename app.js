@@ -34,7 +34,7 @@ const cors = require("cors");
 app.use(cors({
   origin: [
     "https://canyon-backend.onrender.com",
-    "http://localhost:5173",
+    "http://localhost:5174",
     process.env.CLIENT_URL,
   ],
   methods: ["GET", "POST", "PUT", "DELETE"],

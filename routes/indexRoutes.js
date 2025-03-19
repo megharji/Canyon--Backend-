@@ -14,6 +14,7 @@ const {
     getAllRoomReviews,
     seekersDeleteReview
 } = require("../controllers/indexController")
+
 const { isAuthenticates } = require("../middlewares/auth")
 
 //get
