@@ -33,7 +33,7 @@ app.use(fileupload());
 const cors = require("cors");
 app.use(cors({
   origin: [
-    // "https://canyon-backend.onrender.com",
+    "https://canyon-backend.onrender.com",
     "http://localhost:5173",
     process.env.CLIENT_URL,
   ],
